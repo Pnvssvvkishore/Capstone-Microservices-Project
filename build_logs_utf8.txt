@@ -1,0 +1,407 @@
+﻿#1 [internal] load local bake definitions
+#1 reading from stdin 4.31kB done
+#1 DONE 0.0s
+
+#2 [order-service internal] load build definition from Dockerfile
+#2 transferring dockerfile:
+#2 transferring dockerfile: 211B 0.5s done
+#2 ...
+
+#3 [api-gateway internal] load build definition from Dockerfile
+#3 transferring dockerfile: 211B 0.2s done
+#3 DONE 2.6s
+
+#4 [product-service internal] load build definition from Dockerfile
+#4 transferring dockerfile: 211B 0.4s done
+#4 DONE 2.6s
+
+#2 [order-service internal] load build definition from Dockerfile
+#2 DONE 2.7s
+
+#5 [notification-service internal] load build definition from Dockerfile
+#5 transferring dockerfile: 211B 0.0s done
+#5 DONE 2.7s
+
+#6 [user-service internal] load build definition from Dockerfile
+#6 transferring dockerfile: 211B 0.2s done
+#6 DONE 2.7s
+
+#7 [sentiment-service internal] load build definition from Dockerfile
+#7 transferring dockerfile: 247B 0.0s done
+#7 DONE 2.7s
+
+#8 [user-service internal] load metadata for docker.io/library/python:3.9-slim
+#8 ...
+
+#9 [review-service internal] load build definition from Dockerfile
+#9 transferring dockerfile: 199B 0.0s done
+#9 DONE 2.7s
+
+#10 [frontend internal] load build definition from Dockerfile
+#10 transferring dockerfile: 213B 0.1s done
+#10 DONE 2.7s
+
+#8 [frontend internal] load metadata for docker.io/library/python:3.9-slim
+#8 ...
+
+#11 [auth] library/python:pull token for registry-1.docker.io
+#11 DONE 0.0s
+
+#8 [frontend internal] load metadata for docker.io/library/python:3.9-slim
+#8 DONE 2.2s
+
+#12 [user-service internal] load .dockerignore
+#12 transferring context: 2B done
+#12 DONE 0.1s
+
+#13 [api-gateway internal] load .dockerignore
+#13 transferring context: 2B done
+#13 DONE 0.1s
+
+#14 [sentiment-service internal] load .dockerignore
+#14 transferring context: 2B done
+#14 DONE 0.1s
+
+#15 [review-service internal] load .dockerignore
+#15 transferring context: 2B done
+#15 DONE 0.1s
+
+#16 [product-service internal] load .dockerignore
+#16 transferring context: 2B done
+#16 DONE 0.2s
+
+#17 [frontend 1/5] FROM docker.io/library/python:3.9-slim@sha256:2d97f6910b16bd338d3060f261f53f144965f755599aab1acda1e13cf1731b1b
+#17 DONE 0.0s
+
+#18 [frontend internal] load .dockerignore
+#18 transferring context: 2B done
+#18 DONE 0.1s
+
+#19 [order-service internal] load .dockerignore
+#19 transferring context: 2B done
+#19 DONE 0.1s
+
+#20 [notification-service internal] load .dockerignore
+#20 transferring context: 2B done
+#20 DONE 0.2s
+
+#21 [order-service internal] load build context
+#21 ...
+
+#17 [product-service 1/5] FROM docker.io/library/python:3.9-slim@sha256:2d97f6910b16bd338d3060f261f53f144965f755599aab1acda1e13cf1731b1b
+#17 DONE 0.0s
+
+#22 [user-service internal] load build context
+#22 transferring context: 94B done
+#22 DONE 0.1s
+
+#23 [api-gateway internal] load build context
+#23 transferring context: 3.60kB 0.0s done
+#23 DONE 0.1s
+
+#24 [frontend internal] load build context
+#24 transferring context: 422B done
+#24 DONE 0.1s
+
+#25 [sentiment-service internal] load build context
+#25 transferring context: 964B 0.0s done
+#25 DONE 0.1s
+
+#21 [order-service internal] load build context
+#21 transferring context: 93B done
+#21 DONE 0.1s
+
+#26 [review-service internal] load build context
+#26 transferring context: 2.73kB 0.0s done
+#26 DONE 0.1s
+
+#27 [notification-service internal] load build context
+#27 transferring context: 93B done
+#27 DONE 0.2s
+
+#28 [product-service internal] load build context
+#28 transferring context: 93B done
+#28 DONE 0.2s
+
+#29 [user-service 3/5] COPY requirements.txt .
+#29 CACHED
+
+#30 [user-service 4/5] RUN pip install --no-cache-dir -r requirements.txt
+#30 CACHED
+
+#31 [user-service 5/5] COPY . .
+#31 CACHED
+
+#32 [api-gateway 3/5] COPY requirements.txt .
+#32 CACHED
+
+#33 [api-gateway 4/5] RUN pip install --no-cache-dir -r requirements.txt
+#33 CACHED
+
+#34 [order-service 3/5] COPY requirements.txt .
+#34 CACHED
+
+#35 [order-service 4/5] RUN pip install --no-cache-dir -r requirements.txt
+#35 CACHED
+
+#36 [order-service 5/5] COPY . .
+#36 CACHED
+
+#37 [frontend 4/5] RUN pip install --no-cache-dir -r requirements.txt
+#37 CACHED
+
+#38 [frontend 3/5] COPY requirements.txt .
+#38 CACHED
+
+#39 [notification-service 3/5] COPY requirements.txt .
+#39 CACHED
+
+#40 [notification-service 4/5] RUN pip install --no-cache-dir -r requirements.txt
+#40 CACHED
+
+#41 [frontend 5/5] COPY . .
+#41 CACHED
+
+#42 [notification-service 5/5] COPY . .
+#42 CACHED
+
+#43 [user-service 2/5] WORKDIR /app
+#43 CACHED
+
+#44 [product-service 3/5] COPY requirements.txt .
+#44 CACHED
+
+#45 [product-service 4/5] RUN pip install --no-cache-dir -r requirements.txt
+#45 CACHED
+
+#46 [product-service 5/5] COPY . .
+#46 CACHED
+
+#47 [order-service] exporting to image
+#47 exporting layers
+#47 exporting layers done
+#47 writing image sha256:26aaab49f5d69b39bc35c65395ebd5040fc5a96195dbceed14388ea7e4a854e5 0.0s done
+#47 naming to docker.io/library/microservices-project-order-service 0.1s done
+#47 DONE 0.3s
+
+#48 [review-service 3/5] COPY requirements.txt .
+#48 DONE 0.2s
+
+#49 [sentiment-service 3/6] COPY requirements.txt .
+#49 DONE 0.2s
+
+#50 [api-gateway 5/5] COPY . .
+#50 DONE 0.2s
+
+#51 [product-service] exporting to image
+#51 exporting layers done
+#51 writing image sha256:7a1847f26f30f36581379882e756ac144a19d7588b20df10371e7528d27fdaf2 0.1s done
+#51 naming to docker.io/library/microservices-project-product-service 0.1s done
+#51 DONE 0.3s
+
+#52 [notification-service] exporting to image
+#52 exporting layers done
+#52 writing image sha256:1c97823902ef66a30d3b8b2ddace1a9ed8f48a09bd5f8efa06d16133301bf7f1 0.0s done
+#52 naming to docker.io/library/microservices-project-notification-service 0.0s done
+#52 DONE 0.3s
+
+#53 [user-service] exporting to image
+#53 exporting layers done
+#53 writing image sha256:8cdefc9135cd11e20141568b9e212fe0ce871f9fb0e8119b53d284cbd7c81682 0.0s done
+#53 naming to docker.io/library/microservices-project-user-service 0.1s done
+#53 DONE 0.3s
+
+#54 [frontend] exporting to image
+#54 exporting layers done
+#54 writing image sha256:8c4b0d45a1fe144bd717a40ce0185d56e8e95f3d18c19467c7c2adb04374f5f9 0.0s done
+#54 naming to docker.io/library/microservices-project-frontend 0.1s done
+#54 DONE 0.3s
+
+#55 [api-gateway] exporting to image
+#55 exporting layers 0.1s done
+#55 writing image sha256:0f48adfdb4512cdcc1c0ce8e44f656d1f413fbabde3652688cc00e5225c9b0bb
+#55 writing image sha256:0f48adfdb4512cdcc1c0ce8e44f656d1f413fbabde3652688cc00e5225c9b0bb done
+#55 naming to docker.io/library/microservices-project-api-gateway 0.0s done
+#55 DONE 0.4s
+
+#56 [order-service] resolving provenance for metadata file
+#56 DONE 0.0s
+
+#57 [sentiment-service 4/6] RUN pip install --no-cache-dir -r requirements.txt
+#57 ...
+
+#58 [notification-service] resolving provenance for metadata file
+#58 DONE 0.4s
+
+#59 [frontend] resolving provenance for metadata file
+#59 DONE 0.4s
+
+#60 [user-service] resolving provenance for metadata file
+#60 DONE 0.3s
+
+#61 [api-gateway] resolving provenance for metadata file
+#61 DONE 0.2s
+
+#62 [product-service] resolving provenance for metadata file
+#62 DONE 0.0s
+
+#63 [review-service 4/5] RUN pip install --no-cache-dir -r requirements.txt
+#63 4.711 Collecting Flask==3.0.0
+#63 4.885   Downloading flask-3.0.0-py3-none-any.whl (99 kB)
+#63 4.913      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 99.7/99.7 kB 4.2 MB/s eta 0:00:00
+#63 4.970 Collecting Flask-SQLAlchemy==3.1.1
+#63 4.997   Downloading flask_sqlalchemy-3.1.1-py3-none-any.whl (25 kB)
+#63 5.265 Collecting psycopg2-binary==2.9.9
+#63 5.288   Downloading psycopg2_binary-2.9.9-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+#63 5.432      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 3.0/3.0 MB 21.4 MB/s eta 0:00:00
+#63 5.515 Collecting requests==2.31.0
+#63 5.535   Downloading requests-2.31.0-py3-none-any.whl (62 kB)
+#63 5.540      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 62.6/62.6 kB 26.3 MB/s eta 0:00:00
+#63 5.597 Collecting prometheus-flask-exporter==0.23.0
+#63 5.628   Downloading prometheus_flask_exporter-0.23.0-py3-none-any.whl (18 kB)
+#63 5.692 Collecting Jinja2>=3.1.2
+#63 5.709   Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+#63 5.736      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 134.9/134.9 kB 5.5 MB/s eta 0:00:00
+#63 5.779 Collecting itsdangerous>=2.1.2
+#63 5.807   Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+#63 5.865 Collecting click>=8.1.3
+#63 5.885   Downloading click-8.1.8-py3-none-any.whl (98 kB)
+#63 5.894      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 98.2/98.2 kB 19.4 MB/s eta 0:00:00
+#63 5.941 Collecting blinker>=1.6.2
+#63 5.968   Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+#63 6.101 Collecting importlib-metadata>=3.6.0
+#63 6.129   Downloading importlib_metadata-8.7.1-py3-none-any.whl (27 kB)
+#63 6.225 Collecting Werkzeug>=3.0.0
+#63 6.244   Downloading werkzeug-3.1.7-py3-none-any.whl (226 kB)
+#63 6.259      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 226.3/226.3 kB 23.0 MB/s eta 0:00:00
+#63 ...
+
+#57 [sentiment-service 4/6] RUN pip install --no-cache-dir -r requirements.txt
+#57 4.712 Collecting Flask==3.0.0
+#57 4.875   Downloading flask-3.0.0-py3-none-any.whl (99 kB)
+#57 4.908      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 99.7/99.7 kB 3.2 MB/s eta 0:00:00
+#57 4.987 Collecting textblob==0.17.1
+#57 5.007   Downloading textblob-0.17.1-py2.py3-none-any.whl (636 kB)
+#57 5.045      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 636.8/636.8 kB 18.9 MB/s eta 0:00:00
+#57 5.362 Collecting prometheus-flask-exporter==0.23.0
+#57 5.390   Downloading prometheus_flask_exporter-0.23.0-py3-none-any.whl (18 kB)
+#57 5.475 Collecting Jinja2>=3.1.2
+#57 5.494   Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+#57 5.523      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 134.9/134.9 kB 5.1 MB/s eta 0:00:00
+#57 5.623 Collecting Werkzeug>=3.0.0
+#57 5.640   Downloading werkzeug-3.1.7-py3-none-any.whl (226 kB)
+#57 5.651      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 226.3/226.3 kB 31.6 MB/s eta 0:00:00
+#57 5.791 Collecting importlib-metadata>=3.6.0
+#57 5.817   Downloading importlib_metadata-8.7.1-py3-none-any.whl (27 kB)
+#57 5.895 Collecting click>=8.1.3
+#57 5.914   Downloading click-8.1.8-py3-none-any.whl (98 kB)
+#57 5.926      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 98.2/98.2 kB 12.5 MB/s eta 0:00:00
+#57 5.982 Collecting itsdangerous>=2.1.2
+#57 6.010   Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+#57 6.064 Collecting blinker>=1.6.2
+#57 6.092   Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+#57 6.162 Collecting nltk>=3.1
+#57 6.190   Downloading nltk-3.9.2-py3-none-any.whl (1.5 MB)
+#57 6.274      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 1.5/1.5 MB 18.9 MB/s eta 0:00:00
+#57 6.354 Collecting prometheus-client
+#57 6.373   Downloading prometheus_client-0.24.1-py3-none-any.whl (64 kB)
+#57 6.380      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 64.1/64.1 kB 22.5 MB/s eta 0:00:00
+#57 6.493 Collecting zipp>=3.20
+#57 6.523   Downloading zipp-3.23.0-py3-none-any.whl (10 kB)
+#57 6.801 Collecting MarkupSafe>=2.0
+#57 6.831   Downloading markupsafe-3.0.3-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (20 kB)
+#57 6.948 Collecting joblib
+#57 6.971   Downloading joblib-1.5.3-py3-none-any.whl (309 kB)
+#57 7.024      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 309.1/309.1 kB 6.5 MB/s eta 0:00:00
+#57 7.212 Collecting tqdm
+#57 7.233   Downloading tqdm-4.67.3-py3-none-any.whl (78 kB)
+#57 7.244      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 78.4/78.4 kB 9.9 MB/s eta 0:00:00
+#57 9.522 Collecting regex>=2021.8.3
+#57 9.545   Downloading regex-2026.1.15-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (791 kB)
+#57 9.575      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 791.3/791.3 kB 34.6 MB/s eta 0:00:00
+#57 9.906 Installing collected packages: zipp, tqdm, regex, prometheus-client, MarkupSafe, joblib, itsdangerous, click, blinker, Werkzeug, nltk, Jinja2, importlib-metadata, textblob, Flask, prometheus-flask-exporter
+#57 13.01 Successfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.7 blinker-1.9.0 click-8.1.8 importlib-metadata-8.7.1 itsdangerous-2.2.0 joblib-1.5.3 nltk-3.9.2 prometheus-client-0.24.1 prometheus-flask-exporter-0.23.0 regex-2026.1.15 textblob-0.17.1 tqdm-4.67.3 zipp-3.23.0
+#57 13.01 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#57 13.29 
+#57 13.29 [notice] A new release of pip is available: 23.0.1 -> 26.0.1
+#57 13.29 [notice] To update, run: pip install --upgrade pip
+#57 DONE 15.8s
+
+#63 [review-service 4/5] RUN pip install --no-cache-dir -r requirements.txt
+#63 7.748 Collecting sqlalchemy>=2.0.16
+#63 7.770   Downloading sqlalchemy-2.0.48-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.2 MB)
+#63 7.922      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 3.2/3.2 MB 22.0 MB/s eta 0:00:00
+#63 8.415 Collecting charset-normalizer<4,>=2
+#63 8.437   Downloading charset_normalizer-3.4.6-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (207 kB)
+#63 8.454      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 207.9/207.9 kB 18.1 MB/s eta 0:00:00
+#63 8.525 Collecting certifi>=2017.4.17
+#63 8.548   Downloading certifi-2026.2.25-py3-none-any.whl (153 kB)
+#63 8.558      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 153.7/153.7 kB 25.6 MB/s eta 0:00:00
+#63 8.671 Collecting urllib3<3,>=1.21.1
+#63 8.690   Downloading urllib3-2.6.3-py3-none-any.whl (131 kB)
+#63 8.700      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 131.6/131.6 kB 18.9 MB/s eta 0:00:00
+#63 8.757 Collecting idna<4,>=2.5
+#63 8.778   Downloading idna-3.11-py3-none-any.whl (71 kB)
+#63 8.789      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 71.0/71.0 kB 9.6 MB/s eta 0:00:00
+#63 8.875 Collecting prometheus-client
+#63 8.904   Downloading prometheus_client-0.24.1-py3-none-any.whl (64 kB)
+#63 8.920      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 64.1/64.1 kB 7.8 MB/s eta 0:00:00
+#63 9.148 Collecting zipp>=3.20
+#63 9.190   Downloading zipp-3.23.0-py3-none-any.whl (10 kB)
+#63 9.530 Collecting MarkupSafe>=2.0
+#63 9.557   Downloading markupsafe-3.0.3-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (20 kB)
+#63 9.704 Collecting typing-extensions>=4.6.0
+#63 9.722   Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+#63 9.733      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 44.6/44.6 kB 4.9 MB/s eta 0:00:00
+#63 10.48 Collecting greenlet>=1
+#63 10.50   Downloading greenlet-3.2.5-cp39-cp39-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (587 kB)
+#63 10.55      ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 587.5/587.5 kB 13.3 MB/s eta 0:00:00
+#63 10.97 Installing collected packages: zipp, urllib3, typing-extensions, psycopg2-binary, prometheus-client, MarkupSafe, itsdangerous, idna, greenlet, click, charset-normalizer, certifi, blinker, Werkzeug, sqlalchemy, requests, Jinja2, importlib-metadata, Flask, prometheus-flask-exporter, Flask-SQLAlchemy
+#63 16.50 Successfully installed Flask-3.0.0 Flask-SQLAlchemy-3.1.1 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.7 blinker-1.9.0 certifi-2026.2.25 charset-normalizer-3.4.6 click-8.1.8 greenlet-3.2.5 idna-3.11 importlib-metadata-8.7.1 itsdangerous-2.2.0 prometheus-client-0.24.1 prometheus-flask-exporter-0.23.0 psycopg2-binary-2.9.9 requests-2.31.0 sqlalchemy-2.0.48 typing-extensions-4.15.0 urllib3-2.6.3 zipp-3.23.0
+#63 16.50 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#63 16.80 
+#63 16.80 [notice] A new release of pip is available: 23.0.1 -> 26.0.1
+#63 16.80 [notice] To update, run: pip install --upgrade pip
+#63 DONE 17.3s
+
+#64 [review-service 5/5] COPY app.py .
+#64 DONE 0.1s
+
+#65 [review-service] exporting to image
+#65 exporting layers
+#65 exporting layers 0.6s done
+#65 writing image sha256:5f19b4ea5648044c8acad88e510d90e9c91d52130b08adcf2423a5a694abd141 done
+#65 naming to docker.io/library/microservices-project-review-service 0.0s done
+#65 DONE 0.7s
+
+#66 [review-service] resolving provenance for metadata file
+#66 DONE 0.0s
+
+#67 [sentiment-service 5/6] RUN python -m textblob.download_corpora || true
+#67 1.441 [nltk_data] Downloading package brown to /root/nltk_data...
+#67 2.119 [nltk_data]   Unzipping corpora/brown.zip.
+#67 2.589 [nltk_data] Downloading package punkt to /root/nltk_data...
+#67 5.474 [nltk_data]   Unzipping tokenizers/punkt.zip.
+#67 5.889 [nltk_data] Downloading package wordnet to /root/nltk_data...
+#67 7.943 [nltk_data] Downloading package averaged_perceptron_tagger to
+#67 7.943 [nltk_data]     /root/nltk_data...
+#67 8.191 [nltk_data]   Unzipping taggers/averaged_perceptron_tagger.zip.
+#67 8.233 [nltk_data] Downloading package conll2000 to /root/nltk_data...
+#67 8.621 [nltk_data]   Unzipping corpora/conll2000.zip.
+#67 8.640 [nltk_data] Downloading package movie_reviews to /root/nltk_data...
+#67 9.307 [nltk_data]   Unzipping corpora/movie_reviews.zip.
+#67 9.677 Finished.
+#67 DONE 10.6s
+
+#68 [sentiment-service 6/6] COPY app.py .
+#68 DONE 0.1s
+
+#69 [sentiment-service] exporting to image
+#69 exporting layers
+#69 exporting layers 0.5s done
+#69 writing image sha256:13c97023b544bf928999030eb099ac1b25778929c9845d9547a7fedeaeb8856c done
+#69 naming to docker.io/library/microservices-project-sentiment-service done
+#69 DONE 0.5s
+
+#70 [sentiment-service] resolving provenance for metadata file
+#70 DONE 0.0s

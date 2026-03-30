@@ -1,0 +1,16 @@
+[94m[INFO] Starting comprehensive verification...[0m
+[94m[INFO] Waiting for API Gateway to be ready...[0m
+[92m[SUCCESS] API Gateway is ready![0m
+[94m[INFO] 1. Testing User Registration...[0m
+[92m[SUCCESS] POST /register - Success (201)[0m
+[94m[INFO] 2. Testing User Login...[0m
+[92m[SUCCESS] POST /login - Success (200)[0m
+[94m[INFO] 3. Testing Product Creation...[0m
+[92m[SUCCESS] POST /products - Success (201)[0m
+[94m[INFO] 4. Testing Order Creation...[0m
+[92m[SUCCESS] POST /orders - Success (201)[0m
+[94m[INFO] 5. Testing Notifications Log...[0m
+[92m[SUCCESS] GET /notifications - Success (200)[0m
+[94m[INFO] 6. Testing Prometheus Metrics Exposure...[0m
+[92m[SUCCESS] API Gateway Metrics Exposed[0m
+[92m[SUCCESS] Verification Complete![0m

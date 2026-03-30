@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>System Notifications</h1>
+<p class="text-muted">This log shows all notifications sent by the system (e.g. order confirmations).</p>
+<div class="list-group">
+    {% for note in notifications %}
+    <div class="list-group-item">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Notification #{{ note.id }}</h5>
+            <small>Sent to: {{ note.user }}</small>
+        </div>
+        <p class="mb-1">{{ note.message }}</p>
+    </div>
+    {% else %}
+    <div class="list-group-item text-center">No notifications found.</div>
+    {% endfor %}
+</div>
+{% endblock %}

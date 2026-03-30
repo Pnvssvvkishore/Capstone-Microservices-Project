@@ -1,0 +1,10 @@
+CONTAINER ID   IMAGE                                        COMMAND                  CREATED         STATUS              PORTS                                         NAMES
+4545c5d69ec3   prom/prometheus:latest                       "/bin/prometheus --c…"   4 minutes ago   Up 4 minutes        9090/tcp                                      unruffled_knuth
+60a8d91132d0   microservices-project-api-gateway            "python app.py"          9 minutes ago   Up 9 minutes        0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp   microservices-project-api-gateway-1
+4a6c46ffc6d3   microservices-project-order-service          "python app.py"          9 minutes ago   Up About a minute   0.0.0.0:5003->5003/tcp, [::]:5003->5003/tcp   microservices-project-order-service-1
+523d2df7bb86   microservices-project-notification-service   "python app.py"          9 minutes ago   Up About a minute   0.0.0.0:5004->5004/tcp, [::]:5004->5004/tcp   microservices-project-notification-service-1
+0c9e5d79322f   grafana/grafana                              "/run.sh"                9 minutes ago   Up 9 minutes        0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp   microservices-project-grafana-1
+3e17cf1184b9   microservices-project-user-service           "python app.py"          9 minutes ago   Up About a minute   0.0.0.0:5001->5001/tcp, [::]:5001->5001/tcp   microservices-project-user-service-1
+49a874e44409   microservices-project-product-service        "python app.py"          9 minutes ago   Up About a minute   0.0.0.0:5002->5002/tcp, [::]:5002->5002/tcp   microservices-project-product-service-1
+406e0ce9640c   prom/prometheus                              "/bin/prometheus --c…"   9 minutes ago   Up 9 minutes        0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp   microservices-project-prometheus-1
+185594ddba42   postgres:15-alpine                           "docker-entrypoint.s…"   9 minutes ago   Up 9 minutes        0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   microservices-project-postgres-1

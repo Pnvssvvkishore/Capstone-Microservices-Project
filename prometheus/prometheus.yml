@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'microservices'
+    static_configs:
+      - targets: ['api-gateway:5000', 'user-service:5001', 'product-service:5002', 'order-service:5003', 'notification-service:5004', 'review-service:5005', 'sentiment-service:5006']

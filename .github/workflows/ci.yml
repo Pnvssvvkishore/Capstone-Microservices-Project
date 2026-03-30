@@ -1,0 +1,54 @@
+name: Microservices CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test-and-analyze:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.9"
+
+    - name: Install dependencies for testing
+      run: |
+        python -m pip install --upgrade pip
+        # Install all required testing packages across all microservices
+        pip install flask pytest pytest-cov requests flask-sqlalchemy psycopg2-binary jwt tenacity flask-limiter textblob pika redis prometheus-flask-exporter
+        python -m textblob.download_corpora
+
+    - name: Run Unit Tests with Coverage
+      # This runs the tests and generates a code coverage report for your project
+      # This report tells you how well your code is tested—a huge win for a B.Tech project!
+      run: |
+        pytest --cov=. --cov-report=xml
+
+    - name: SonarCloud Scan
+      # Professional Cloud-based code analysis (100% Free for Open Source)
+      # This will scan your code for security bugs and performance issues.
+      # You can connect your SonarCloud account for the full experience.
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # This token is provided by SonarCloud for free
+
+    - name: Upload Coverage to Codecov
+      # Uploads your test coverage reports to the cloud (Codecov is free)
+      # This puts a nice green Badge on your Readme
+      uses: codecov/codecov-action@v3
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }} # Codecov gives this token for free
+        file: ./coverage.xml
+        fail_ci_if_error: false # Allows the CI to continue even if coverage upload fails (common in new repos)
+
+    - name: Docker Config Check
+      run: |
+        docker-compose config

@@ -1,0 +1,125 @@
+services:
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "5000:5000"
+    environment:
+      - USER_SERVICE_URL=http://user-service:5001
+      - PRODUCT_SERVICE_URL=http://product-service:5002
+      - ORDER_SERVICE_URL=http://order-service:5003
+      - NOTIFICATION_SERVICE_URL=http://notification-service:5004
+      - REVIEW_SERVICE_URL=http://review-service:5005
+    depends_on:
+      - user-service
+      - product-service
+      - order-service
+      - notification-service
+      - review-service
+      - sentiment-service
+
+  user-service:
+    build: ./user-service
+    ports:
+      - "5001:5001"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/microservices_db
+      - NOTIFICATION_SERVICE_URL=http://notification-service:5004
+    depends_on:
+      - postgres
+
+  product-service:
+    build: ./product-service
+    ports:
+      - "5002:5002"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/microservices_db
+    depends_on:
+      - postgres
+
+  order-service:
+    build: ./order-service
+    ports:
+      - "5003:5003"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/microservices_db
+      - PRODUCT_SERVICE_URL=http://product-service:5002
+      - NOTIFICATION_SERVICE_URL=http://notification-service:5004
+    depends_on:
+      - postgres
+      - product-service
+
+  notification-service:
+    build: ./notification-service
+    ports:
+      - "5004:5004"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/microservices_db
+    depends_on:
+      - postgres
+
+  review-service:
+    build: ./review-service
+    ports:
+      - "5005:5005"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/microservices_db
+      - SENTIMENT_SERVICE_URL=http://sentiment-service:5006
+    depends_on:
+      - postgres
+      - sentiment-service
+
+  sentiment-service:
+    build: ./sentiment-service
+    ports:
+      - "5006:5006"
+
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=microservices_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+    depends_on:
+      - prometheus
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8081:5005"
+    environment:
+      - API_GATEWAY_URL=http://api-gateway:5000
+      - FLASK_SECRET_KEY=dev_secret
+    depends_on:
+      - api-gateway

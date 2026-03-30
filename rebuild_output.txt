@@ -1,0 +1,93 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 676B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 211B 0.0s done
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/python:3.9-slim
+#3 DONE 0.8s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/python:3.9-slim@sha256:2d97f6910b16bd338d3060f261f53f144965f755599aab1acda1e13cf1731b1b
+#5 DONE 0.0s
+
+#6 [2/5] WORKDIR /app
+#6 CACHED
+
+#7 [internal] load build context
+#7 transferring context: 93B done
+#7 DONE 0.0s
+
+#8 [3/5] COPY requirements.txt .
+#8 DONE 0.1s
+
+#9 [4/5] RUN pip install --no-cache-dir -r requirements.txt
+#9 4.926 Collecting Flask==2.3.3
+#9 4.996   Downloading flask-2.3.3-py3-none-any.whl (96 kB)
+#9 5.032      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.1/96.1 kB 3.0 MB/s eta 0:00:00
+#9 5.099 Collecting Flask-SQLAlchemy==3.0.5
+#9 5.116   Downloading flask_sqlalchemy-3.0.5-py3-none-any.whl (24 kB)
+#9 5.387 Collecting psycopg2-binary==2.9.7
+#9 5.405   Downloading psycopg2_binary-2.9.7-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+#9 5.639      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 13.2 MB/s eta 0:00:00
+#9 5.964 Collecting prometheus-flask-exporter==0.23.0
+#9 5.984   Downloading prometheus_flask_exporter-0.23.0-py3-none-any.whl (18 kB)
+#9 6.076 Collecting Werkzeug>=2.3.7
+#9 6.110   Downloading werkzeug-3.1.5-py3-none-any.whl (225 kB)
+#9 6.118      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 52.2 MB/s eta 0:00:00
+#9 6.233 Collecting importlib-metadata>=3.6.0
+#9 6.250   Downloading importlib_metadata-8.7.1-py3-none-any.whl (27 kB)
+#9 6.294 Collecting Jinja2>=3.1.2
+#9 6.309   Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+#9 6.319      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 20.5 MB/s eta 0:00:00
+#9 6.350 Collecting itsdangerous>=2.1.2
+#9 6.366   Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+#9 6.420 Collecting click>=8.1.3
+#9 6.438   Downloading click-8.1.8-py3-none-any.whl (98 kB)
+#9 6.444      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.2/98.2 kB 35.5 MB/s eta 0:00:00
+#9 6.480 Collecting blinker>=1.6.2
+#9 6.498   Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+#9 7.853 Collecting sqlalchemy>=1.4.18
+#9 7.872   Downloading sqlalchemy-2.0.46-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.2 MB)
+#9 8.083      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 15.5 MB/s eta 0:00:00
+#9 8.162 Collecting prometheus-client
+#9 8.181   Downloading prometheus_client-0.24.1-py3-none-any.whl (64 kB)
+#9 8.186      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.1/64.1 kB 66.3 MB/s eta 0:00:00
+#9 8.271 Collecting zipp>=3.20
+#9 8.297   Downloading zipp-3.23.0-py3-none-any.whl (10 kB)
+#9 8.633 Collecting MarkupSafe>=2.0
+#9 8.663   Downloading markupsafe-3.0.3-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (20 kB)
+#9 9.492 Collecting greenlet>=1
+#9 9.511   Downloading greenlet-3.2.4-cp39-cp39-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (582 kB)
+#9 9.543      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 582.8/582.8 kB 20.8 MB/s eta 0:00:00
+#9 9.612 Collecting typing-extensions>=4.6.0
+#9 9.629   Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+#9 9.633      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.6/44.6 kB 134.6 MB/s eta 0:00:00
+#9 9.959 Installing collected packages: zipp, typing-extensions, psycopg2-binary, prometheus-client, MarkupSafe, itsdangerous, greenlet, click, blinker, Werkzeug, sqlalchemy, Jinja2, importlib-metadata, Flask, prometheus-flask-exporter, Flask-SQLAlchemy
+#9 12.91 Successfully installed Flask-2.3.3 Flask-SQLAlchemy-3.0.5 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.5 blinker-1.9.0 click-8.1.8 greenlet-3.2.4 importlib-metadata-8.7.1 itsdangerous-2.2.0 prometheus-client-0.24.1 prometheus-flask-exporter-0.23.0 psycopg2-binary-2.9.7 sqlalchemy-2.0.46 typing-extensions-4.15.0 zipp-3.23.0
+#9 12.91 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#9 13.11 
+#9 13.11 [notice] A new release of pip is available: 23.0.1 -> 26.0.1
+#9 13.11 [notice] To update, run: pip install --upgrade pip
+#9 DONE 14.1s
+
+#10 [5/5] COPY . .
+#10 DONE 0.1s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 0.4s done
+#11 writing image sha256:dbefd2b2c743633c5be38bed1c88edbdf6f0812a76bed7e6b4c62040411f188f done
+#11 naming to docker.io/library/microservices-project-notification-service done
+#11 DONE 0.5s
+
+#12 resolving provenance for metadata file
+#12 DONE 0.0s
+
+STDERR:
+ microservices-project-notification-service  Built

@@ -1,0 +1,10 @@
+Starting deployment of notification-service...
+Up stdout: 
+Up stderr:  Container microservices-project-postgres-1  Running
+ Container microservices-project-notification-service-1  Running
+
+Waiting for service...
+Testing GET /notifications...
+Status: 200
+Body: []
+
