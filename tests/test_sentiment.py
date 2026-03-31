@@ -4,15 +4,27 @@ from flask import json
 import os
 import sys
 
-# Add the sentiment-service to the Python path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'sentiment-service')))
+import importlib.util
 
-from app import app
+# Load the app from sentiment-service using a unique module name
+spec = importlib.util.spec_from_file_location("sentiment_app", os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'sentiment-service', 'app.py')))
+sentiment_module = importlib.util.module_from_spec(spec)
+sys.modules["sentiment_app"] = sentiment_module
+spec.loader.exec_module(sentiment_module)
+app = sentiment_module.app
 
 class TestSentiment(unittest.TestCase):
     def setUp(self):
         self.app = app.test_client()
         self.app.testing = True
+
+    def test_health(self):
+        """Test the /health endpoint returns 200 OK"""
+        response = self.app.get('/health')
+        self.assertEqual(response.status_code, 200)
+        data = json.loads(response.data)
+        self.assertEqual(data['status'], 'UP')
+        self.assertEqual(data['service'], 'sentiment-service')
 
     def test_positive_sentiment(self):
         """Test 'POSITIVE' sentiment analysis with a known positive string"""
