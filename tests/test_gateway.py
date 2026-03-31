@@ -10,6 +10,7 @@ import importlib.util
 os.environ['SECRET_KEY'] = 'test_secret'
 os.environ['USER_SERVICE_URL'] = 'http://test-user'
 os.environ['PRODUCT_SERVICE_URL'] = 'http://test-product'
+os.environ['REDIS_URL'] = 'memory://'
 
 # Load the app from api-gateway using a unique module name
 spec = importlib.util.spec_from_file_location("gateway_app", os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'api-gateway', 'app.py')))
