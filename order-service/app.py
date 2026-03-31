@@ -22,6 +22,10 @@ class Order(db.Model):
     def to_dict(self):
         return {"id": self.id, "user_id": self.user_id, "product_id": self.product_id}
 
+@app.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "UP", "service": "order-service"}), 200
+
 PRODUCT_SERVICE_URL = os.environ.get('PRODUCT_SERVICE_URL', 'http://product-service:5002')
 NOTIFICATION_SERVICE_URL = os.environ.get('NOTIFICATION_SERVICE_URL', 'http://notification-service:5004')
 RABBITMQ_URL = os.environ.get('RABBITMQ_URL', 'amqp://guest:guest@rabbitmq:5672/')

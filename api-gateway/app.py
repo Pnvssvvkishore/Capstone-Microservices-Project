@@ -60,6 +60,10 @@ def make_request(method, url, **kwargs):
 def home():
     return jsonify({"message": "API Gateway is running"}), 200
 
+@app.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "UP", "service": "api-gateway"}), 200
+
 @app.route('/register', methods=['POST'])
 def register():
     resp = make_request('POST', f"{USER_SERVICE_URL}/register", json=request.json)

@@ -9,6 +9,10 @@ app.secret_key = 'supersecretkey'  # Change for production
 # API Gateway URL inside the Docker network
 API_GATEWAY_URL = os.environ.get('API_GATEWAY_URL', 'http://api-gateway:5000')
 
+@app.route('/health')
+def health():
+    return "OK", 200
+
 @app.route('/')
 def index():
     try:

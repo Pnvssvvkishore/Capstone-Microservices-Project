@@ -73,9 +73,12 @@ graph TD
    - **Prometheus**: [http://localhost:30090](http://localhost:30090)
    - **Grafana**: [http://localhost:30030](http://localhost:30030) (admin / admin)
 
-## Monitoring
+## Monitoring & Production Readiness
 - **Prometheus**: Data collection from all microservices.
 - **Grafana**: Pre-configured dashboards for system health.
+- **Health Probes**: All services implement `/health` endpoints with Kubernetes Liveness and Readiness probes for automated recovery.
+- **Security**: JWT authentication in API Gateway and User service, rate limiting via Redis.
+- **Stability**: Circuit breakers/retry logic with Tenacity in API Gateway.
 
 ## CI/CD
 A GitHub Actions workflow (`.github/workflows/ci.yml`) validates the configuration and builds images on every push to `main`.

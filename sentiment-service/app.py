@@ -5,6 +5,10 @@ from textblob import TextBlob
 app = Flask(__name__)
 metrics = PrometheusMetrics(app)
 
+@app.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "UP", "service": "sentiment-service"}), 200
+
 @app.route('/analyze', methods=['POST'])
 def analyze_sentiment():
     data = request.json

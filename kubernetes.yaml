@@ -171,6 +171,18 @@ spec:
               value: http://notification-service:5004
             - name: SECRET_KEY
               value: super_secret_jwt_key
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5001
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5001
+            initialDelaySeconds: 5
+            periodSeconds: 10
 ---
 # ============================================================
 # PRODUCT SERVICE (port 5002)
@@ -211,6 +223,18 @@ spec:
               value: postgresql://postgres:postgres@postgres:5432/microservices_db
             - name: REDIS_URL
               value: redis://redis:6379
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5002
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5002
+            initialDelaySeconds: 5
+            periodSeconds: 10
 ---
 # ============================================================
 # ORDER SERVICE (port 5003)
@@ -255,6 +279,18 @@ spec:
               value: http://notification-service:5004
             - name: RABBITMQ_URL
               value: amqp://guest:guest@rabbitmq:5672/
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5003
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5003
+            initialDelaySeconds: 5
+            periodSeconds: 10
 ---
 # ============================================================
 # NOTIFICATION SERVICE (port 5004)
@@ -295,6 +331,18 @@ spec:
               value: postgresql://postgres:postgres@postgres:5432/microservices_db
             - name: RABBITMQ_URL
               value: amqp://guest:guest@rabbitmq:5672/
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5004
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5004
+            initialDelaySeconds: 5
+            periodSeconds: 10
 ---
 # ============================================================
 # REVIEW SERVICE (port 5005)
@@ -335,6 +383,18 @@ spec:
               value: postgresql://postgres:postgres@postgres:5432/microservices_db
             - name: SENTIMENT_SERVICE_URL
               value: http://sentiment-service:5006
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5005
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5005
+            initialDelaySeconds: 5
+            periodSeconds: 10
 ---
 # ============================================================
 # SENTIMENT SERVICE (port 5006)
@@ -370,6 +430,19 @@ spec:
           imagePullPolicy: Never
           ports:
             - containerPort: 5006
+              name: sentiment-svc
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5006
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5006
+            initialDelaySeconds: 5
+            periodSeconds: 10
 ---
 # ============================================================
 # API GATEWAY (port 5000) — exposed via NodePort 30080
@@ -424,6 +497,18 @@ spec:
               value: super_secret_jwt_key
             - name: REDIS_URL
               value: redis://redis:6379
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 10
 ---
 # ============================================================
 # FRONTEND (port 8081 inside, exposed via NodePort 30081)
@@ -466,6 +551,18 @@ spec:
               value: http://api-gateway:5000
             - name: FLASK_SECRET_KEY
               value: dev_secret
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5005
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5005
+            initialDelaySeconds: 5
+            periodSeconds: 10
 ---
 # ============================================================
 # PROMETHEUS (port 9090) — exposed via NodePort 30090

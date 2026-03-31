@@ -35,6 +35,10 @@ class Product(db.Model):
             "image_url": self.image_url
         }
 
+@app.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "UP", "service": "product-service"}), 200
+
 
 @app.route('/products', methods=['POST'])
 def add_product():

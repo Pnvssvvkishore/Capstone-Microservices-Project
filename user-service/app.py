@@ -27,6 +27,10 @@ class User(db.Model):
     def to_dict(self):
         return {"id": self.id, "name": self.name, "email": self.email}
 
+@app.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "UP", "service": "user-service"}), 200
+
 @app.route('/register', methods=['POST'])
 def register():
     data = request.json

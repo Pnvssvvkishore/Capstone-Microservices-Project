@@ -30,6 +30,10 @@ class Review(db.Model):
             "sentiment_score": self.sentiment_score
         }
 
+@app.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "UP", "service": "review-service"}), 200
+
 @app.route('/reviews', methods=['POST'])
 def add_review():
     data = request.json
