@@ -45,4 +45,4 @@ jobs:
 
     - name: Docker Config Check
       run: |
-        docker-compose config
+        docker compose config || docker-compose config
